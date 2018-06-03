@@ -6,6 +6,7 @@ const hero = {
   name: "Captain Slapstick",
   heroic: true,
   inventory: ['custard pie','anvil', 'big boot','boxing glove','banana peel'],
+  //Should I add damage to the inventory as well?
   health: 1,
   weapon: {
       type: "banana peel",
@@ -15,16 +16,19 @@ const hero = {
 };
 // Game logic
 const rest = function(creature){
-  if (hero.health < 10){
-return creature.health =10;
-}};
-//maybe without the if statement?
+  //if (hero.health < 10){
+creature.health =10;
+return creature;
+//}
+};
+
 
 
 const pickUpItem = function(creature, item){
   creature.inventory.push('custard pie');
   return creature;
 };
+
 
 
 
@@ -39,10 +43,10 @@ const equipWeapon = function(creature, index){
   creature.weapon = creature.inventory[index]
   return creature.splice();
   };
-  
+
 
 const doBattle = (heroicCreature, creature) => {
-if( heroicCreature === !heroic ){
+if( heroicCreature !== heroic ){
   return null;
 };
 while( heroicCreature && creature === health > 0){
