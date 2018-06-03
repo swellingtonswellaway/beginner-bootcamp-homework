@@ -16,21 +16,15 @@ const hero = {
 };
 // Game logic
 const rest = function(creature){
-  //if (hero.health < 10){
-creature.health =10;
-return creature;
-//}
+  creature.health =10;
+  return creature;
 };
-
-
 
 const pickUpItem = function(creature, item){
   creature.inventory.push('custard pie');
   return creature;
 };
-
-
-
+console.log(pickUpItem);
 
 const dealDamage = function(attacker, defender){
 defender.health = defender.health - attacker.weapon.damage;
@@ -39,14 +33,16 @@ return defender;
 
 
 
-const equipWeapon = function(creature, index){
-  creature.weapon = creature.inventory[index]
-  return creature.splice();
-  };
+const equipWeapon = function(creature, index) {
+  creature.weapon = creature.inventory[index];
+
+   creature.inventory.splice();
+   return creature;
+};
 
 
-const doBattle = (heroicCreature, creature) => {
-if( heroicCreature !== heroic ){
+const doBattle = function(heroicCreature, creature) {
+if( heroicCreature.heroic === false ){
   return null;
 };
 while( heroicCreature && creature === health > 0){
@@ -56,7 +52,7 @@ while( heroicCreature && creature === health > 0){
 if( heroicCreature.health > 0) {
   return heroicCreature;
 } else {
-  alert('You died!')
+  window.alert('You died!');
 };
 };
 
