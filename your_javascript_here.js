@@ -32,23 +32,28 @@ const dealDamage = function(attacker, defender){
 defender.health = defender.health - attacker.weapon.damage;
 return defender;
 };
-console.log(defender);
+
 
 
 const equipWeapon = function(creature, index){
   creature.weapon = creature.inventory[index]
   return creature.splice();
   };
-  console.log(creature)
+  
 
 const doBattle = (heroicCreature, creature) => {
 if( heroicCreature === !heroic ){
   return null;
-}
-
-  If `heroicCreature` is not `heroic` return `null` from this function.
-
-
+};
+while( heroicCreature && creature === health > 0){
+  dealDamage( heroicCreature, creature );
+  dealDamage( creature, heroicCreature);
+};
+if( heroicCreature.health > 0) {
+  return heroicCreature;
+} else {
+  alert('You died!')
+};
 };
 
 // UI
